@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style>
+
+
+    .login {
+        min-height: 200px;
+        width: 200px;
+        background-color: rgba(0,0,0,.3);
+        border: 2px groove white;
+        border-radius: 10px;
+        position: absolute;
+        top: 150px;
+        left: 700px;
+    }
+
+    .box {
+        height: 200px;
+        width: 300px;
+        background: pink;
+        border: 2px solid black;
+    }
+
+    .outer {
+        min-height: 300px;
+        width: 400px;
+        background: whitesmoke;
+       
+        margin: 50px auto;
+        border-radius: 10px;
+        animation-name: boxborder;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        animation-direction:alternate;
+    }
+
+    #box1 {
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+
+    body {
+        animation-name:shubham;
+        animation-iteration-count:infinite;
+        animation-duration:4s;
+    }
+    @@keyframes shubham{
+        10% {
+            background: #eeeef2;
+        }
+        50% {
+            background: #e2e3e6;
+        }
+        100% {
+            background: #eeeef2;
+        }
+    }
+    @@keyframes boxborder {
+        10% {
+            box-shadow: 2px 1px 5px 2px #c3c3c6;
+            border: 1px groove #c3c3c6;
+        }
+
+        20% {
+            box-shadow: 2px 1px 5px 2px #eeeef2;
+        }
+        40% {
+            box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+        }
+        60% {
+            box-shadow: 2px 1px 5px 2px #c3c3c6;
+        }
+        80% {
+            box-shadow: 2px 1px 5px 2px #eeeef2;
+        }
+
+        100% {
+            box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+        }
+    }
+</style>
+<div class="container">
+    <div class="row outer">
+        <div class="container">
+
+            <div class="col-sm-12">
+                <form method="post">
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-12" id="box1">
+                            <h3 style="color:red;font-family:serif">Sign In</h3>
+                            <input type="text" placeholder="Email" name="email" required class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12" id="box1">
+                            <input type="text" placeholder="Password" name="password" required class="form-control" />
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-12" id="box1">
+                            <input type="submit" value="SignUp" required class="form-control btn-success" />
+                        </div>
+                    </div>
+                    
+                </form><br/>
+                <p style="margin-left:80px;"><a style="color:red;font-family:serif;" href="/home/Index">New to Smart? Create Account</a></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>

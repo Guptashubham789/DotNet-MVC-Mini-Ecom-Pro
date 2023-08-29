@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "RedirectPage";
+    Layout = "~/Views/Shared/_Uheader.cshtml";
+}
+<style>
+    .page {
+        min-height: 500px;
+        width: 1000px;
+        border-radius: 10px;
+        box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+        background: whitesmoke;
+    }
+    .outer {
+        min-height: 800px;
+        width: 100%;
+        background: whitesmoke;
+        box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+       margin:0px auto;
+        border-radius: 10px;
+    }
+    .childrow
+    {
+        min-height:200px;
+        width:1400px;
+        background:pink;
+        border-radius:20px;
+        box-sizing:border-box;  
+    }
+</style>
+
+
+
+<div class="container">
+    <h3 class="text-center" style="color:red;font-family:serif">Order</h3><hr />
+    <div class="row outer">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="row m-2">
+                    <div class="col-sm-12 childrow">
+                        <table border="2">
+                            <thead>
+                                <tr>
+                                    <th>Sr.</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
+                                    <th>Picture</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Shubham</td>
+                                    <td>200</td>
+                                    <td>Hello Shubham..</td>
+                                    <td><img src="~/Content/UserProfile/s14.jpeg" height="100" width="100"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "RedirectPage";
+    Layout = "~/Views/Shared/_Uheader.cshtml";
+    <!--href="/home/order/item.id"-->
+}
+<style>
+    .page {
+        min-height: 500px;
+        width: 1000px;
+        border-radius: 10px;
+        box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+        background: whitesmoke;
+    }
+</style>
+
+
+
+<div class="container page">
+    <h3 class="text-center" style="color:red;font-family:sans-serif">Add To Cart</h3><hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                @foreach (var item in ViewBag.data)
+                {
+                    <center><img src="~/Content/ProductPicture/@item.pimage" alt="Shubham" style="width:300px;height:250px" /></center>
+                    <div class="card-body m-2">
+                        <h5 class="card-title">
+                            <b>Name : </b>@item.title
+                        </h5>
+                        <p>Color : @item.pcolor</p>
+                        <del><p>Price : @item.price &#x20B9;</p></del>
+                        <p>Discount Price : @item.saleprice &#x20B9;</p>
+                        <p>Description : @item.pdescription</p>
+                        <button type="submit" onclick="ordercom('@item.id' + '@Session["userid"]')">Order Now</button>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function ordercom(userid, id) {
+        alert(userid,id);
+        $.ajax({
+            url: '/home/Edit/'+id+'/'+userid,
+            type: 'post',
+            dataType: 'json',
+            //data: {'id':id}, 
+            success: function (res) {
+
+            },
+            error: function () {
+                alert("erorr");
+            }
+        });
+    }
+</script>

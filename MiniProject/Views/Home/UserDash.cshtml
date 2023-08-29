@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_Uheader.cshtml";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>UserDash</title>
+    <style>
+        .product
+        {
+            min-height:500px;
+            background:whitesmoke;
+            border-radius:10px;
+        }
+        .carousel-inner
+        {
+            border:5px solid black;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row outer">
+
+            <h3 class="text-center text-justify">All Product</h3>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 product">
+
+                @{
+                                
+                                    foreach (System.Data.DataRow data in Model.Rows)
+                                    {
+                                  <div class="card" >
+                                        
+                                    <center><img src="~/Content/ProductPicture/@data["picture"]" alt="Shubham" style="width:300px" /></center>
+                                    <div class="card-body m-2">
+                                        <h5 class="card-title">
+                                        <b>Name : </b>@data["Title"]</h5>
+                                        <p>Color : @data["Color"]</p>
+                                        <del><p>Price : @data["Price"] &#x20B9;</p></del>
+                                        <p>Discount Price : @data["SalePrice"] &#x20B9;</p>
+                                        <p>Description : @data["Description"]</p>
+                                        <button ><a href="/home/RedirectPage?id=@data["id"]">Show Details</a></button>
+                                    </div>
+                                        </div><br/>
+                                    }
+                              
+                        }
+                 
+
+                </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row slider"></div>
+    </div>
+    <script>
+        function Pagebtn(id) {
+            alert(id);
+            debugger;
+            $.ajax({
+                url: '/home/RedirectPage/' + id,
+                type: 'post',
+                dataType: 'json',
+                success: function (res) {
+                    alert(res);
+
+                },
+                error: function () {
+                    alert("erorr");
+                }
+            });
+           // onclick="Pagebtn('data["id"]')" window.location.href = "/home/RedirectPage";
+        }
+    </script>
+</body>
+</html>

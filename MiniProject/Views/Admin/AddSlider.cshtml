@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "AddSlider";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    body {
+        background: whitesmoke;
+    }
+
+    .box {
+        min-height: 400px;
+        margin: 30px auto;
+        //border:1px solid black;
+        border-radius: 10px;
+    }
+</style>
+<div class="container outer">
+    <h3 style="text-align:center">Add Slider</h3>
+    <hr />
+    <div class="row box">
+        <form method="post" enctype="multipart/form-data">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        Slider:<input type="file" required name="picture" class="form-control" />
+                    </div>
+
+                </div><br />
+
+                <input type="submit" value="Save" class="form-control" style="background:lightgreen;" />
+            </div>
+                </form>
+            </div>
+    </div>
+

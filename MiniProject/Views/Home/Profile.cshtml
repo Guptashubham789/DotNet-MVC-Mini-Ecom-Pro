@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Uheader.cshtml";
+}
+
+
+<!-- <form>
+    <center>
+        <div class="row">
+            <div class="col-md-12" id="image" style="height:150px;width:150px;border-radius:75px;border:2px solid black">
+                <img src="~/Content/UserProfile/@Session["userpics"]" height="100" width="100" style="border-radius:50px;background-size:cover" />
+            </div>
+
+        </div>
+    </center>
+
+    UserId:
+    <input type="number" value="@Session["userid"]" readonly class="form-control" />
+    Name :
+    <input type="text" value=" @Session["username"]" class="form-control" name="name" /><br />
+    Email :
+    <input type="text" value=" @Session["useremail"]" class="form-control" name="email" /><br />
+    Password :
+    <input type="text" value=" @Session["userpass"]" class="form-control" name="password" /><br />
+    Contact :
+    <input type="text" value=" @Session["usermobile"]" class="form-control" name="number" /><br />
+    Gender :
+    <input type="text" value=" @Session["usergender"]" class="form-control" name="gender" /><br />
+    Address :
+    <input type="text" value=" @Session["useraddress"]" class="form-control" name="address" /><br />
+
+    <!--<button type="button" value="Edit" id="btnedit" style="height:40px;width:80px;line-height:40px;border-radius:20px;color:black;font-size:18px" class=" btn-success">Edit</button>
+
+    </form> -->
+    <style>
+
+
+        .login {
+            min-height: 200px;
+            width: 200px;
+            background-color: rgba(0,0,0,.3);
+            border: 2px groove white;
+            border-radius: 10px;
+            position: absolute;
+            top: 150px;
+            left: 700px;
+        }
+
+        .box {
+            height: 200px;
+            width: 300px;
+            background: pink;
+            border: 2px solid black;
+            animation-name: boxborder;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+            animation-direction: alternate;
+        }
+
+        .outer {
+            min-height: 300px;
+            width: 400px;
+            background: whitesmoke;
+            box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+
+        #box1 {
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+
+        body {
+            animation-name: shubham;
+            animation-iteration-count: infinite;
+            animation-duration: 4s;
+        }
+
+        @@keyframes shubham {
+            10% {
+                background: #eeeef2;
+            }
+
+            50% {
+                background: #e2e3e6;
+            }
+
+            100% {
+                background: #eeeef2;
+            }
+        }
+
+        @@keyframes boxborder {
+            10% {
+                box-shadow: 2px 1px 5px 2px #c3c3c6;
+                border: 1px groove #c3c3c6;
+            }
+
+            20% {
+                box-shadow: 2px 1px 5px 2px #eeeef2;
+            }
+
+            40% {
+                box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+            }
+
+            60% {
+                box-shadow: 2px 1px 5px 2px #c3c3c6;
+            }
+
+            80% {
+                box-shadow: 2px 1px 5px 2px #eeeef2;
+            }
+
+            100% {
+                box-shadow: 2px 1px 5px 2px rgb(128 128 128);
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="row outer">
+            <div class="container">
+
+                <div class="col-sm-12">
+                    <form method="post" enctype="multipart/form-data">
+                        <h3 style="color:red;font-family:serif">Profile</h3>
+                        <center>
+                            <div class="row">
+                                <div class="col-md-12" id="image" style="height:100px;width:100px;border-radius:50px;margin-left:120px;">
+                                    <img src="~/Content/UserProfile/@Session["userpics"]" height="100" width="100" style="border-radius:50px;background-size:cover" />
+                                </div>
+
+                            </div>
+                        </center>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+
+                                <input type="text" value=" @Session["userid"]" readonly name="name" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+
+                                <input type="text" value=" @Session["username"]" readonly name="name" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+                                <input type="text" value=" @Session["useremail"]" readonly name="email" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+                                <input type="password" value=" @Session["userpass"]" readonly name="password" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+                                <input type="number" value=" @Session["usermobile"]" readonly name="number" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+                                <input type="text" value=" @Session["usergender"]" readonly name="gender" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12" id="box1">
+                                <input type="text" value=" @Session["useraddress"]" readonly name="address" required class="form-control" />
+                            </div>
+                        </div>
+
+
+                    </form><br />
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $("#btnedit").click(function () {
+
+        });
+    </script>
+
